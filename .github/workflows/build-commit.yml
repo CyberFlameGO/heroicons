@@ -1,4 +1,4 @@
-name: Build & Publish
+name: Build & Commit
 
 on:
   push:
@@ -27,8 +27,8 @@ jobs:
         with:
           name: packages-build
           path: packages
-  publish:
-    name: Publish Packages
+  commit:
+    name: Commit Packages
     runs-on: ubuntu-20.04
     needs: build
     steps:
@@ -44,25 +44,14 @@ jobs:
       - name: Set outputs
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-      - name: Check Changes (vue-heroicons)
+      - name: Check Changes
         uses: marceloprado/has-changed-path@v1
-        id: vueHeroiconsChanged
+        id: pkgsChanged
         with:
-          paths: packages/vue-heroicons
-      - name: Bump Version (vue-heroicons)
-        if: ${{ steps.vueHeroiconsChanged.outputs.changed == 1 }}
-        run: npm version minor
-        working-directory: packages/vue-heroicons
-      - name: Publish Package (vue-heroicons)
-        uses: JS-DevTools/npm-publish@v1
-        if: ${{ steps.vueHeroiconsChanged.outputs.changed == 1 }}
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          access: public
-          package: packages/vue-heroicons/package.json
+          paths: packages
       - name: Push Changes
         uses: stefanzweifel/git-auto-commit-action@v4
-        if: ${{ steps.vueHeroiconsChanged.outputs.changed == 1 }}
+        if: ${{ steps.pkgsChanged.outputs.changed == 1 }}
         with:
           commit_message: ${{ format('Update packages from @ {0} :rocket:', steps.vars.outputs.sha_short) }}
 
