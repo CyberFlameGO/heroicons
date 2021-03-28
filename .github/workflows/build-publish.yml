@@ -59,7 +59,7 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           access: public
-        working-directory: packages/vue-heroicons
+          package: packages/vue-heroicons/package.json
       - name: Push Changes
         uses: stefanzweifel/git-auto-commit-action@v4
         if: ${{ steps.vueHeroiconsChanged.outputs.changed == 1 }}
