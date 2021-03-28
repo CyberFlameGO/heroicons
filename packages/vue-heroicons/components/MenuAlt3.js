@@ -19,7 +19,8 @@ export default Vue.extend({
       fill: 'none',
       stroke: 'currentColor',
     }
-    data.domProps.innerHTML = '$SVGINNER'
+    if (!data.domProps) data.domProps = {}
+    data.domProps.innerHTML = '<path d="M4 6H20M4 12H20M13 18H20" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
     return createElement('svg', data)
   },
 })
