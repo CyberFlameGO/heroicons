@@ -12,8 +12,8 @@ export default Vue.extend({
       data.attrs.width = context.props.size
       data.attrs.height = context.props.size
     }
-    data.attr = {
-      ...data.attr,
+    data.attrs = {
+      ...data.attrs,
       viewBox: `0 0 20 20`,
       xmlns: 'http://www.w3.org/2000/svg',
       fill: 'currentColor',
