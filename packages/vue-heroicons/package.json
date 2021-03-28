@@ -1,0 +1,16 @@
+{
+  "name": "@bloxlink/vue-heroicons",
+  "version": "1.0.0",
+  "description": "Tailwind Heroicons meant for use with Nuxt's auto-import",
+  "author": "Vap0r1ze",
+  "license": "MIT",
+  "keywords": [
+    "heroicons",
+    "vue",
+    "nuxt"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/cli.git"
+  }
+}

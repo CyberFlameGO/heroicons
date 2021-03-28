@@ -1,0 +1,19 @@
+{
+  "name": "@bloxlink/heroicons-tools",
+  "private": true,
+  "description": "A tool for generating heroicon packages",
+  "scripts": {
+    "build": "npm run build:packages && npm run clean",
+    "build:packages": "npm run build:heroicons && node scripts/generatePackages.js",
+    "build:heroicons": "cd heroicons && npm run build-outline && npm run build-solid && cd ..",
+    "clean": "git submodule update -N --force"
+  },
+  "author": "Vap0r1ze",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "svgo": "^2.3.0"
+  }
+}
