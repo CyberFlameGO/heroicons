@@ -51,6 +51,7 @@ jobs:
         if: ${{ steps.vars.outputs.vueChanged == 1 }}
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          package: ./packages/vue-heroicons/package.json
           access: public
       - name: Push Changes
         uses: stefanzweifel/git-auto-commit-action@v4
