@@ -6,7 +6,7 @@
 export default {
   components: [
     '~/components',
-    { path: 'node_modules/@bloxlink/vue-heroicons/components', prefix: 'HeroIcon' }
+    { path: 'node_modules/@bloxlink/vue-heroicons/components', prefix: 'hero-icon' },
   ],
 }
 ```
@@ -16,7 +16,7 @@ export default {
 
 <template>
   <button class="btn">
-    <HeroIconX />
+    <HeroIconBell />
   </button>
 </template>
 ```

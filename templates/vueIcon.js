@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: '$PASCAL_NAME',
+  name: 'HeroIcon$PASCAL_NAME',
   functional: true,
   props: {
     size: { type: Number, default: 0 },
