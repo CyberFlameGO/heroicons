@@ -19,7 +19,8 @@ export default Vue.extend({
       fill: '$FILL',
       stroke: '$STROKE',
     }
-    data.domProps.innerHTML = '$SVGINNER'
+    if (!data.domProps) data.domProps = {}
+    data.domProps.innerHTML = '$SVG_INNER'
     return createElement('svg', data)
   },
 })
