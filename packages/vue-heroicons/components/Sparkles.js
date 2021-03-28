@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'Sparkles',
+  name: 'HeroIconSparkles',
   functional: true,
   props: {
     size: { type: Number, default: 0 },

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'CloudUploadSolid',
+  name: 'HeroIconCloudUploadSolid',
   functional: true,
   props: {
     size: { type: Number, default: 0 },

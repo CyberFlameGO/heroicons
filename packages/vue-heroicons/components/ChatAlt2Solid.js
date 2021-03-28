@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'ChatAlt2Solid',
+  name: 'HeroIconChatAlt2Solid',
   functional: true,
   props: {
     size: { type: Number, default: 0 },

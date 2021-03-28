@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'XSolid',
+  name: 'HeroIconXSolid',
   functional: true,
   props: {
     size: { type: Number, default: 0 },

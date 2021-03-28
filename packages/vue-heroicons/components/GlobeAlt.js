@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'GlobeAlt',
+  name: 'HeroIconGlobeAlt',
   functional: true,
   props: {
     size: { type: Number, default: 0 },

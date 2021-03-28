@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'TrendingDownSolid',
+  name: 'HeroIconTrendingDownSolid',
   functional: true,
   props: {
     size: { type: Number, default: 0 },

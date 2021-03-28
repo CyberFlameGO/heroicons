@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'SearchCircleSolid',
+  name: 'HeroIconSearchCircleSolid',
   functional: true,
   props: {
     size: { type: Number, default: 0 },

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'ArrowCircleUpSolid',
+  name: 'HeroIconArrowCircleUpSolid',
   functional: true,
   props: {
     size: { type: Number, default: 0 },

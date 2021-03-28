@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'MenuAlt3',
+  name: 'HeroIconMenuAlt3',
   functional: true,
   props: {
     size: { type: Number, default: 0 },

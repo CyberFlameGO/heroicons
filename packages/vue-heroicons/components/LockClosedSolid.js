@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'LockClosedSolid',
+  name: 'HeroIconLockClosedSolid',
   functional: true,
   props: {
     size: { type: Number, default: 0 },
