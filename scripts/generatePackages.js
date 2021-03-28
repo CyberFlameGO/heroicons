@@ -6,7 +6,7 @@ const pkgsPath = resolve(__dirname, '../packages')
 const iconTypes = fs.readdirSync(iconSrcPath)
   .filter(file => !file.startsWith('.'))
 
-const vueIconTemplate = fs.readFileSync(resolve(__dirname, '../templates/vueIcon.vue')).toString()
+const vueIconTemplate = fs.readFileSync(resolve(__dirname, '../templates/vueIcon.js')).toString()
 
 const getIconVars = icon => {
   const vars = {
@@ -65,5 +65,5 @@ fs.mkdirSync(vueComponentsPath)
 for (const icon of allIcons) {
   const vars = getIconVars(icon)
   const component = hydrateTemplate(vueIconTemplate, vars)
-  fs.writeFileSync(resolve(vueComponentsPath, `${vars.PASCAL_NAME}.vue`), component)
+  fs.writeFileSync(resolve(vueComponentsPath, `${vars.PASCAL_NAME}.js`), component)
 }
