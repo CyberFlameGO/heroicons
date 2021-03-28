@@ -22,12 +22,12 @@ jobs:
         run: npm ci
       - name: Show Aggregate Checksums (Pre-Build)
         run: |
-          echo packages/vue-heroicons: "find packages/vue-heroicons -type f -print0 | sort -z | xargs -0 sha1sum | sha1sum | awk '{ print $1 }'"
+          echo packages/vue-heroicons: $(find packages/vue-heroicons -type f -print0 | sort -z | xargs -0 sha1sum | sha1sum | awk '{ print $1 }')
       - name: Build Packages
         run: npm run build
       - name: Show Aggregate Checksums (Post-Build)
         run: |
-          echo packages/vue-heroicons: "find packages/vue-heroicons -type f -print0 | sort -z | xargs -0 sha1sum | sha1sum | awk '{ print $1 }'"
+          echo packages/vue-heroicons: $(find packages/vue-heroicons -type f -print0 | sort -z | xargs -0 sha1sum | sha1sum | awk '{ print $1 }')
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
         with:
