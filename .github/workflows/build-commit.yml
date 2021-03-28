@@ -43,15 +43,12 @@ jobs:
           path: packages
       - name: Set outputs
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-      - name: Check Changes
-        uses: marceloprado/has-changed-path@v1
-        id: pkgsChanged
-        with:
-          paths: packages
+        run: |
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+          echo "::set-output name=pkgsChanged::$(git diff --quiet HEAD -- packages; echo $?)"
       - name: Push Changes
         uses: stefanzweifel/git-auto-commit-action@v4
-        if: ${{ steps.pkgsChanged.outputs.changed == 1 }}
+        if: ${{ steps.vars.outputs.pkgsChanged == 1 }}
         with:
           commit_message: ${{ format('Update packages from @ {0} :rocket:', steps.vars.outputs.sha_short) }}
 
