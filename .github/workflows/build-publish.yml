@@ -1,4 +1,4 @@
-name: Build & Commit
+name: Build & Publish
 
 on:
   push:
@@ -27,8 +27,8 @@ jobs:
         with:
           name: packages-build
           path: packages
-  commit:
-    name: Commit Packages
+  publish:
+    name: Publish Packages
     runs-on: ubuntu-20.04
     needs: build
     steps:
@@ -41,14 +41,20 @@ jobs:
         with:
           name: packages-build
           path: packages
-      - name: Set outputs
+      - name: Set Variables
         id: vars
         run: |
           echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-          echo "::set-output name=pkgsChanged::$(git diff --quiet HEAD -- packages; echo $?)"
+          echo "::set-output name=vueChanged::$(git diff --quiet HEAD -- packages/vue-heroicons; echo $?)"
+      - name: Publish vue-heroicons
+        uses: JS-DevTools/npm-publish@v1
+        if: ${{ steps.vars.outputs.vueChanged == 1 }}
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
       - name: Push Changes
         uses: stefanzweifel/git-auto-commit-action@v4
-        if: ${{ steps.vars.outputs.pkgsChanged == 1 }}
+        if: ${{ steps.vars.outputs.vueChanged == 1 }}
         with:
           commit_message: ${{ format('Update packages from @ {0} :rocket:', steps.vars.outputs.sha_short) }}
 
