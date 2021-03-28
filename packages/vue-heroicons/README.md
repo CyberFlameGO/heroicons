@@ -6,7 +6,7 @@
 export default {
   components: [
     '~/components',
-    { path: 'node_modules/@bloxlink/vue-heroicons/components', prefix: 'hero-icon' },
+    { path: 'node_modules/@bloxlink/vue-heroicons/components' },
   ],
 }
 ```

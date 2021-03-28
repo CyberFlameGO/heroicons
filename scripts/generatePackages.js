@@ -65,5 +65,5 @@ fs.mkdirSync(vueComponentsPath)
 for (const icon of allIcons) {
   const vars = getIconVars(icon)
   const component = hydrateTemplate(vueIconTemplate, vars)
-  fs.writeFileSync(resolve(vueComponentsPath, `${vars.PASCAL_NAME}.js`), component)
+  fs.writeFileSync(resolve(vueComponentsPath, `HeroIcon${vars.PASCAL_NAME}.js`), component)
 }
