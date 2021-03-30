@@ -1,7 +1,7 @@
 const fs = require('fs')
 const { resolve } = require('path')
 
-const iconSrcPath = resolve(__dirname, '../heroicons/src')
+const iconSrcPath = resolve(__dirname, '../heroicons/optimized')
 const pkgsPath = resolve(__dirname, '../packages')
 const iconTypes = fs.readdirSync(iconSrcPath)
   .filter(file => !file.startsWith('.'))
