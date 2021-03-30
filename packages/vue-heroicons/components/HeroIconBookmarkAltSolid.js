@@ -20,7 +20,7 @@ export default Vue.extend({
       stroke: 'none',
     }
     if (!data.domProps) data.domProps = {}
-    data.domProps.innerHTML = '<path fill-rule="evenodd" clip-rule="evenodd" d="M3 5C3 3.89543 3.89543 3 5 3H15C16.1046 3 17 3.89543 17 5V15C17 16.1046 16.1046 17 15 17H5C3.89543 17 3 16.1046 3 15V5ZM14 6H6V14L10 12L14 14V6Z" fill="#4B5563"/>'
+    data.domProps.innerHTML = '<path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm11 1H6v8l4-2 4 2V6z" clip-rule="evenodd"/>'
     return createElement('svg', data)
   },
 })
